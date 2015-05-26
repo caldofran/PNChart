@@ -90,10 +90,12 @@
     [self getYValueMax:yAxisValues];
   }
   
-  if (_yLabelSum==4) {
-    _yLabelSum = yAxisValues.count;
-    (_yLabelSum % 2 == 0) ? _yLabelSum : _yLabelSum++;
-  }
+    int yLabelsDifTotal = (int)[NSSet setWithArray:yAxisValues].count;
+    _yLabelSum = yLabelsDifTotal;
+//  if (_yLabelSum==4) {
+//    _yLabelSum = yAxisValues.count;
+//    (_yLabelSum % 2 == 0) ? _yLabelSum : _yLabelSum++;
+//  }
   
   float sectionHeight = (self.frame.size.height - _chartMargin * 2 - kXLabelHeight) / _yLabelSum;
   for (int i = 0; i < _yLabelSum; i++) {
