@@ -131,7 +131,7 @@
     int max = [[yLabels valueForKeyPath:@"@max.intValue"] intValue];
 
     //ensure max is even
-    _yValueMax = max;// % 2 == 0 ? max : max + 1;
+    _yValueMax = max % 2 == 0 ? max : max + 1;
 
     if (_yValueMax == 0) {
         _yValueMax = _yMinValue;
