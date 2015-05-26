@@ -71,7 +71,7 @@
     //make the _yLabelSum value dependant of the distinct values of yValues to avoid duplicates on yAxis
     NSSet *differentValues = [NSSet setWithArray:yValues];
     int yLabelsDifTotal = (int)differentValues.count;
-    _yLabelSum = yLabelsDifTotal == 1 && [[differentValues allObjects] firstObject] == 0 ? 0 : yLabelsDifTotal;
+    _yLabelSum = yLabelsDifTotal == 1 && [[[differentValues allObjects] firstObject] isEqual:@(0)] ? 0 : yLabelsDifTotal;
 
     if (_yMaxValue) {
         _yValueMax = _yMaxValue;
