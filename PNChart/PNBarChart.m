@@ -78,7 +78,10 @@
             *stop = YES;
         }
     }];
-    _yLabelSum = anyOfTheValuesIsZero ? yLabelsDifTotal - 1 : yLabelsDifTotal;
+    if (anyOfTheValuesIsZero) {
+        yLabelsDifTotal = yLabelsDifTotal - 1;
+    }
+    _yLabelSum = yLabelsDifTotal % 2 == 0 ? yLabelsDifTotal : yLabelsDifTotal + 1;
 
     if (_yMaxValue) {
         _yValueMax = _yMaxValue;
